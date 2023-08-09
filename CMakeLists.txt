@@ -18,3 +18,8 @@ if (Boost_unit_test_framework_FOUND)
     target_link_libraries(TestDrivenDevelopment Boost::unit_test_framework)
     target_compile_definitions(TestDrivenDevelopment PUBLIC BOOST_TEST_DYN_LINK)
 endif()
+
+include(CTest)
+
+add_test(NAME test_suite
+         COMMAND TestDrivenDevelopment -l test_suite)
